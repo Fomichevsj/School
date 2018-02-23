@@ -19,7 +19,7 @@ public class CreateHTML {
                 "<html>\n" +
                 "<head>\n" +
                 "    <meta charset=\"utf-8\">\n" +
-                "    <title>Кодировка HTML-страницы</title>\n" +
+                "    <title>Мой класс</title>\n" +
                 "    <style>\n" +
                 "        #students {\n" +
                 "            font-family: \"Trebuchet MS\", Arial, Helvetica, sans-serif;\n" +
@@ -58,7 +58,7 @@ public class CreateHTML {
                 "    </style>\n" +
                 "</head>\n" +
                 "<body>");
-        System.out.println("<h1 align=\"center\">Мой класс</h1>");
+        System.out.println("<h1 align=\"center\">11 - Б класс</h1>");
         System.out.println("<table id=\"students\">");
         System.out.println("    <tr>\n" +
                 "        <th>Фамилия</th>\n" +

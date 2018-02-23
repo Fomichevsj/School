@@ -2,12 +2,10 @@ package com.school.DataBase;
 
 import com.school.CustomClasses.Student;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class BigDAO {
     public Connection con;
@@ -42,5 +40,30 @@ public class BigDAO {
                    resultSet.getString("BirthDate")));
        }
        return list;
+   }
+
+   public void addStudent(String lastName, String firstName,
+                          String middleName,
+                          String cassName) throws SQLException {
+       String classId = ";";
+       String getClassId = "select * from \"School\".\"Class\" where \"Name\" = '" +cassName + "'";
+       Statement statement = con.createStatement();
+       ResultSet resultSet = statement.executeQuery(getClassId);
+       if(resultSet.next()) {
+           classId = resultSet.getString("Id");
+       }
+       String query = String.format("INSERT  into \"School\".\"Student\"(" +
+                       "\"Id\", \"LastName\", \"FirstName\", \"MiddleName\", \"ClassId\")\n" +
+                       "VALUES (uuid_in('%s'), '%s', '%s','%s', uuid_in('%s'));",
+               UUID.randomUUID(),
+               lastName,
+               firstName,
+               middleName,
+               classId);
+       System.out.println(query);
+        statement.executeUpdate(query);
+        statement.close();
+        con.close();
+
    }
 }

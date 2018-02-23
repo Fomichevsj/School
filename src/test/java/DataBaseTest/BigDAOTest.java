@@ -19,4 +19,11 @@ public class BigDAOTest {
             s.print();
         }
     }
+
+    @Test
+    public void addStudentTest() throws SQLException {
+        BigDAO bigDAO = new BigDAO();
+        bigDAO.addStudent("Fomichev", "Sergey", "Alexevich",
+                "11B");
+    }
 }
