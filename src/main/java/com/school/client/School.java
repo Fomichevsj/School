@@ -41,23 +41,14 @@ public class School implements EntryPoint {
 
     private void updateTable() {
         schoolFlexTable.setText(1, 0, "Сергеев");
-        schoolFlexTable.getFlexCellFormatter().setStyleName(1, 0, "LastName");
         schoolFlexTable.setText(1, 1, "Андрей");
-        schoolFlexTable.getFlexCellFormatter().setStyleName(1, 1, "FirstName");
-        schoolFlexTable.setText(1, 2, "Егорович");
-        schoolFlexTable.getFlexCellFormatter().setStyleName(1, 2, "MiddleName");
+        schoolFlexTable.setText(1, 2, "Михайлович");
         schoolFlexTable.setText(1, 3, "Y");
-        schoolFlexTable.getFlexCellFormatter().setStyleName(1, 3, "Visit");
 
-        schoolFlexTable.setText(2, 0, "Еврентьева");
-        schoolFlexTable.getFlexCellFormatter().setStyleName(2, 0, "FirstName");
-        schoolFlexTable.setText(2, 1, "Алина");
-        schoolFlexTable.getFlexCellFormatter().setStyleName(2, 1, "LastName");
-        schoolFlexTable.setText(2, 2, "Викторовна");
-        schoolFlexTable.getFlexCellFormatter().setStyleName(2, 2, "MiddleName");
+        schoolFlexTable.setText(2, 0, "Васильева");
+        schoolFlexTable.setText(2, 1, "Екатерина");
+        schoolFlexTable.setText(2, 2, "Олеговна");
         schoolFlexTable.setText(2, 3, "N");
-        schoolFlexTable.getFlexCellFormatter().setStyleName(2, 2, "Visit");
-
     }
 
     private static class MyAsyncCallback implements AsyncCallback<String> {

@@ -24,25 +24,12 @@ body, a, div, .p {
     width: 100%;
 }
 
-.LastName {
+.School td {
     border: 1px solid #ddd;
     padding: 8px;
     border-collapse: collapse;/*Убирает сверху над таблицей линию*/
     width: 10%;
-}
-
-.FirstName {
-    border: 1px solid #ddd;
-    padding: 8px;
-    border-collapse: collapse;/*Убирает сверху над таблицей линию*/
-    width: 10%;
-}
-
-.MiddleName {
-    border: 1px solid #ddd;
-    padding: 8px;
-    border-collapse: collapse;/*Убирает сверху над таблицей линию*/
-    width: 10%;
+    height: 30px;
 }
 
 .Visit {
@@ -58,7 +45,7 @@ body, a, div, .p {
     text-align: left;
     border: 1px solid #ddd;;
     background-color: #4CAF50;
-    height: 34px;
+    height: 25px;
     padding-left: 10px;
     color: white;
 }
