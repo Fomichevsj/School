@@ -35,7 +35,7 @@ body, a, div, .p {
 .FlexTable-ColumnLabelCell {
     border-width: 0 0 1px 0;
     border-style: solid;
-    border-color: white;
+    border-color: green;
     margin: 0;
     padding: 0;
     text-align: center;

@@ -33,6 +33,7 @@ public class School implements EntryPoint {
 
         //schoolFlexTable.setStyleName("students");
         // Associate the Main panel with the HTML host page.
+        schoolFlexTable.setStyleName("FlexTable", true);// Добовляет новый стиль для таблицы
         RootPanel.get("School").add(mainPanel);
     }
 
@@ -41,6 +42,10 @@ public class School implements EntryPoint {
         schoolFlexTable.setText(1, 1, "Андрей");
         schoolFlexTable.setText(1, 2, "Егорович");
         schoolFlexTable.setText(1, 3, "Y");
+        schoolFlexTable.setText(2, 0, "Еврентьева");
+        schoolFlexTable.setText(2, 1, "Алина");
+        schoolFlexTable.setText(2, 2, "Викторовна");
+        schoolFlexTable.setText(2, 3, "N");
 
     }
 
