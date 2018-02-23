@@ -20,10 +20,10 @@ public class School implements EntryPoint {
      */
     public void onModuleLoad() {
         // Create table for stock data.
-        schoolFlexTable.setText(0, 0, "Фамилия");
-        schoolFlexTable.setText(0, 1, "Имя");
-        schoolFlexTable.setText(0, 2, "Отчество");
-        schoolFlexTable.setText(0, 3, "Был/Не был");
+        schoolFlexTable.setText(0, 0, " Фамилия");
+        schoolFlexTable.setText(0, 1, " Имя");
+        schoolFlexTable.setText(0, 2, " Отчество");
+        schoolFlexTable.setText(0, 3, " Был/Не был");
         schoolFlexTable.getRowFormatter().addStyleName(0,"FlexTable-Header");
 
         // Assemble Main panel.
@@ -41,13 +41,22 @@ public class School implements EntryPoint {
 
     private void updateTable() {
         schoolFlexTable.setText(1, 0, "Сергеев");
+        schoolFlexTable.getFlexCellFormatter().setStyleName(1, 0, "LastName");
         schoolFlexTable.setText(1, 1, "Андрей");
+        schoolFlexTable.getFlexCellFormatter().setStyleName(1, 1, "FirstName");
         schoolFlexTable.setText(1, 2, "Егорович");
+        schoolFlexTable.getFlexCellFormatter().setStyleName(1, 2, "MiddleName");
         schoolFlexTable.setText(1, 3, "Y");
+        schoolFlexTable.getFlexCellFormatter().setStyleName(1, 3, "Visit");
+
         schoolFlexTable.setText(2, 0, "Еврентьева");
+        schoolFlexTable.getFlexCellFormatter().setStyleName(2, 0, "FirstName");
         schoolFlexTable.setText(2, 1, "Алина");
+        schoolFlexTable.getFlexCellFormatter().setStyleName(2, 1, "LastName");
         schoolFlexTable.setText(2, 2, "Викторовна");
+        schoolFlexTable.getFlexCellFormatter().setStyleName(2, 2, "MiddleName");
         schoolFlexTable.setText(2, 3, "N");
+        schoolFlexTable.getFlexCellFormatter().setStyleName(2, 2, "Visit");
 
     }
 
