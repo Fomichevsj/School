@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Кодировка HTML-страницы</title>
+    <style>
+        #students {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #students td, #students th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #students tr:nth-child(even){background-color: #f2f2f2;}
+
+        #students tr:hover {background-color: #ddd;}
+
+        #students th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #4CAF50;
+            color: white;
+        }
+        .sendButton {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<h1 align="center">11 - Б класс</h1>
+<table id="students">
+    <tr>
+        <th>Фамилия</th>
+        <th>Имя</th>
+        <th>Отчество</th>
+        <th>Был или не был</th>
+    </tr>
+    <tr>
+        <td>Комаров	</td>
+        <td>Павел</td>
+        <td>Леонидович</td>
+        <td><input type="checkbox">  Был</td>
+    </tr>
+    <tr>
+        <td>Григорьев	</td>
+        <td>Леонтий</td>
+        <td>Львович</td>
+        <td><input type="checkbox">  Был</td>
+    </tr>
+    <tr>
+        <td>Белозёров	</td>
+        <td>Эльвира</td>
+        <td>Эдуардович</td>
+        <td><input type="checkbox">  Был</td>
+    </tr>
+    <tr>
+        <td>Шашков	</td>
+        <td>Леонид</td>
+        <td>Станиславович</td>
+        <td><input type="checkbox">  Был</td>
+    </tr>
+    <tr>
+        <td>Зыков	</td>
+        <td>Алла</td>
+        <td>Петрович</td>
+        <td><input type="checkbox">  Был</td>
+    </tr>
+    <tr>
+        <td>Кудряшов	</td>
+        <td>Эмма</td>
+        <td>Робертович</td>
+        <td><input type="checkbox">  Был</td>
+    </tr>
+    <tr>
+        <td>Колесников	</td>
+        <td>Софья</td>
+        <td>Валентинович</td>
+        <td><input type="checkbox">  Был</td>
+    </tr>
+    <tr>
+        <td>Селезнёв	</td>
+        <td>Татьяна</td>
+        <td>Данилович</td>
+        <td><input type="checkbox">  Был</td>
+    </tr>
+    <tr>
+        <td>Волков	</td>
+        <td>Татьяна</td>
+        <td>Иосифович</td>
+        <td><input type="checkbox">  Был</td>
+    </tr>
+    <tr>
+        <td>Михайлов	</td>
+        <td>Аристарх</td>
+        <td>Станиславович</td>
+        <td><input type="checkbox">  Был</td>
+    </tr>
+</table>
+
+<p align="centre" id = "statusLabel"><label>Отправить информацию</label></p>
+<button onclick="disableFunction()" id = "sendInfoButton" class = "sendButton">Отправить</button>
+<script>
+    function disableFunction() {
+        document.getElementById('statusLabel').innerText = 'Информация отправлена';
+    }
+</script>
+
+</body>
+</html>
+

@@ -43,6 +43,18 @@ public class CreateHTML {
                 "            background-color: #4CAF50;\n" +
                 "            color: white;\n" +
                 "        }\n" +
+                "        .sendButton {\n" +
+                        "            background-color: #4CAF50; /* Green */\n" +
+                        "            border: none;\n" +
+                        "            color: white;\n" +
+                        "            padding: 20px;\n" +
+                        "            text-align: center;\n" +
+                        "            text-decoration: none;\n" +
+                        "            display: inline-block;\n" +
+                        "            font-size: 16px;\n" +
+                        "            margin: 4px 2px;\n" +
+                        "            cursor: pointer;\n" +
+                        "        }\n" +
                 "    </style>\n" +
                 "</head>\n" +
                 "<body>");
@@ -67,9 +79,18 @@ public class CreateHTML {
                     "\t\t<td>" +
                     s.MiddleName +
                     "</td>\n" +
-                    "\t</tr>\n");
+                    "\t\t<td>" +
+                    "<input type=\"checkbox\">  Был" +
+                    "</td>" + "\n</tr>");
         }
-        System.out.println("</table>");
+        System.out.println("</table>\n");
+        System.out.println("<p align=\"centre\" id = \"statusLabel\"><label>Отправить информацию</label></p>\n" +
+                "<button onclick=\"disableFunction()\" id = \"sendInfoButton\" class = \"sendButton\">Отправить</button>\n" +
+                "<script>\n" +
+                "    function disableFunction() {\n" +
+                "        document.getElementById('statusLabel').innerText = 'Информация отправлена';\n" +
+                "    }\n" +
+                "</script>\n");
         System.out.println("\n" +
                 "</body>\n" +
                 "</html>\n");
