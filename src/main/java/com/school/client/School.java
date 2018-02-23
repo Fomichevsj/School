@@ -11,7 +11,8 @@ public class School implements EntryPoint {
 
     private VerticalPanel mainPanel = new VerticalPanel();
     private FlexTable schoolFlexTable = new FlexTable();
-    private HorizontalPanel addPanel = new HorizontalPanel();
+
+
 
 
     /**
@@ -23,21 +24,18 @@ public class School implements EntryPoint {
         schoolFlexTable.setText(0, 1, "Имя");
         schoolFlexTable.setText(0, 2, "Отчество");
         schoolFlexTable.setText(0, 3, "Был/Не был");
-
+        schoolFlexTable.getRowFormatter().addStyleName(0,"FlexTable-Header");
 
         // Assemble Main panel.
         mainPanel.add(schoolFlexTable);
-        mainPanel.add(addPanel);
 
-        updateTable();
+        updateTable();//Добавить записи в таблицу
 
-        //schoolFlexTable.setStyleName("students");
+
         // Associate the Main panel with the HTML host page.
         schoolFlexTable.setStyleName("School", true);// Добовляет новый стиль для таблицы
-        schoolFlexTable
-                .getRowFormatter()
-                .addStyleName(0,"FlexTable-Header");
-        schoolFlexTable.setWidth("100%");
+
+
         RootPanel.get("School").add(mainPanel);
     }
 

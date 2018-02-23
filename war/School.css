@@ -4,6 +4,7 @@ h1 {
     font-size: 2em;
     font-weight: bold;
     text-align: center;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 }
 
 body, a, div, .p {
@@ -13,7 +14,7 @@ body, a, div, .p {
 
 .School {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
+    border-collapse: collapse;/*убирает двойные линии на стыках в ячейках таблицы*/
     width: 100%;
     height: 100%;
 }
@@ -23,26 +24,15 @@ body, a, div, .p {
     padding: 8px;
     width: 100%;
     height: 100%;
+    border-collapse: collapse;/*Убирает сверху над таблицей линию*/
 }
 
-.School tr:nth-child(even){background-color: #f2f2f2;}
-.School tr:hover {background-color: #ddd;}
-
-.School th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #4CAF50;
-    width: 100%;
-    height: 100%;
-    color: white;
-}
 
 .FlexTable-Header {
     height: 100%;
     width: 100%;
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding-top: 8px;/*Отступ текста от верхней границе*/
+    padding-bottom: 8px;/*от нижней границе*/
     text-align: left;
     background-color: #4CAF50;
     color: white;
