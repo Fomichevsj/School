@@ -31,7 +31,8 @@ public class School implements EntryPoint {
         // Assemble Main panel.
         mainPanel.add(schoolFlexTable);
 
-        updateTable();//Добавить записи в таблицу
+        //updateTable();//Добавить записи в таблицу
+        SchoolService.App.getInstance().getInfo(new MyAsyncCallback(schoolFlexTable));
 
 
         // Associate the Main panel with the HTML host page.
@@ -40,7 +41,7 @@ public class School implements EntryPoint {
         Button button = new Button("Отправить");
         final Label label = new Label("Отправить информацию");
 
-        button.addClickHandler(new ClickHandler() {
+/*        button.addClickHandler(new ClickHandler() {
             public void onClick(ClickEvent event) {
                 if (label.getText().equals("Отправить информацию")) {
                     SchoolService.App.getInstance().getInfo(new MyAsyncCallback(schoolFlexTable));
@@ -48,7 +49,7 @@ public class School implements EntryPoint {
                     label.setText("Отправить информацию");
                 }
             }
-        });
+        });*/
 
         RootPanel.get("statusLabel").add(label);
         RootPanel.get("sendInfoButton").add(button);
@@ -56,17 +57,6 @@ public class School implements EntryPoint {
         RootPanel.get("School").add(mainPanel);
     }
 
-    private void updateTable() {
-        schoolFlexTable.setText(1, 0, "Сергеев");
-        schoolFlexTable.setText(1, 1, "Андрей");
-        schoolFlexTable.setText(1, 2, "Михайлович");
-        schoolFlexTable.setText(1, 3, "Y");
-
-        schoolFlexTable.setText(2, 0, "Васильева");
-        schoolFlexTable.setText(2, 1, "Екатерина");
-        schoolFlexTable.setText(2, 2, "Олеговна");
-        schoolFlexTable.setText(2, 3, "N");
-    }
 
     private static class MyAsyncCallback implements AsyncCallback<String[]> {
         private FlexTable table;
