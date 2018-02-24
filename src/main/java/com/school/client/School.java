@@ -104,11 +104,6 @@ public class School implements EntryPoint {
                     public void onValueChange(ValueChangeEvent<Boolean> event) {
                         int ind = checkBoxes.indexOf(checkBox) + 2;
                         if(event.getValue()) {
-                            /*HorizontalPanel hp = new HorizontalPanel();
-                            hp.add(checkBox);
-                            hp.add(new TextBox());
-                            hp.setStyleName("Reason");
-                            table.setWidget(ind, 3, hp);*/
                             if(!someBody) {
                                 for (int j = 2; j < table.getRowCount(); j++) {
                                     table.setText(j, 4, "");
@@ -117,12 +112,12 @@ public class School implements EntryPoint {
                             someBody = true;
                             table.setText(0, 4, "Причина");
                             table.setWidget(ind, 3, checkBox);
-                            TextBox textBox = new TextBox();
+                            /*TextBox textBox = new TextBox();
                             textBox.setStyleName("ReasonSetBox");
-                            table.setWidget(ind, 4, textBox);
-                            //MyDialogBox db = new MyDialogBox(new Label("что-то"));
-                            //db.show();
-                            //db.center();
+                            table.setWidget(ind, 4, textBox);*/
+                            TextArea textArea = new TextArea();
+                            textArea.setStyleName("ReasonSetBox");
+                            table.setWidget(ind, 4, textArea);
 
                         } else {
                             table.setWidget(ind, 3, checkBox);
