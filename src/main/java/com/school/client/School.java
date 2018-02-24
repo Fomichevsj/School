@@ -43,15 +43,6 @@ public class School implements EntryPoint {
         Button button = new Button("Отправить");
         final Label label = new Label("Отправить информацию");
 
-/*        button.addClickHandler(new ClickHandler() {
-            public void onClick(ClickEvent event) {
-                if (label.getText().equals("Отправить информацию")) {
-                    SchoolService.App.getInstance().getInfo(new MyAsyncCallback(schoolFlexTable));
-                } else {
-                    label.setText("Отправить информацию");
-                }
-            }
-        });*/
 
         RootPanel.get("statusLabel").add(label);
         RootPanel.get("sendInfoButton").add(button);
