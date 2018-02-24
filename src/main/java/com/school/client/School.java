@@ -70,8 +70,9 @@ public class School implements EntryPoint {
                 table.setText(r + i +1, 0, result.get(i)[0]);
                 table.setText(r + i +1, 1, result.get(i)[1]);
                 table.setText(r + i +1, 2, result.get(i)[2]);
-                table.setText(r + i +1, 3, result.get(i)[3]);
-
+                SimpleCheckBox checkBox = new SimpleCheckBox();
+                checkBox.setStyleName("regular-checkbox");
+                table.setWidget(r + i + 1, 3, checkBox);
             }
 
         }
