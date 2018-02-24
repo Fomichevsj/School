@@ -103,3 +103,19 @@ tr:nth-child(even){background-color: #f2f2f2;}
     left: 3px;
     color: #99a1a7;
 }
+
+.Reason {
+    border-collapse: collapse;/*Убирает сверху над таблицей линию*/
+}
+
+.popUpDialog {
+    size: A4;
+
+}
+
+.ReasonSetBox {
+    border-collapse: collapse;
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+}

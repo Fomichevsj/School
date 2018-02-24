@@ -3,6 +3,8 @@ package com.school.client;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.event.logical.shared.ValueChangeEvent;
+import com.google.gwt.event.logical.shared.ValueChangeHandler;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.*;
 import com.google.gwt.user.client.rpc.AsyncCallback;
@@ -17,6 +19,8 @@ public class School implements EntryPoint {
 
     private VerticalPanel mainPanel = new VerticalPanel();
     private FlexTable schoolFlexTable = new FlexTable();
+    private static List<SimpleCheckBox> checkBoxes;
+    public static boolean someBody = false;
 
 
 
@@ -25,17 +29,11 @@ public class School implements EntryPoint {
      * Entry point method.
      */
     public void onModuleLoad() {
-        // Create table for stock data.
-        schoolFlexTable.setText(0, 0, " Фамилия");
-        schoolFlexTable.setText(0, 1, " Имя");
-        schoolFlexTable.setText(0, 2, " Отчество");
-        schoolFlexTable.setText(0, 3, " Был/Не был");
-        schoolFlexTable.getRowFormatter().addStyleName(0,"FlexTable-Header");
 
         // Assemble Main panel.
         mainPanel.add(schoolFlexTable);
 
-        //updateTable();//Добавить записи в таблицу
+        //Создать таблицу
         SchoolService.App.getInstance().getInfo(new MyAsyncCallback(schoolFlexTable));
 
 
@@ -44,6 +42,7 @@ public class School implements EntryPoint {
 
         Button button = new Button("Отправить");
         final Label label = new Label("Отправить информацию");
+
 
 
 
@@ -86,17 +85,56 @@ public class School implements EntryPoint {
         }
 
         public void onSuccess(List<String[]> result) {
+            // Create table for stock data.
+            table.setText(0, 0, " Фамилия");
+            table.setText(0, 1, " Имя");
+            table.setText(0, 2, " Отчество");
+            table.setText(0, 3, " Был/Не был");
+            table.getRowFormatter().addStyleName(0,"FlexTable-Header");
             int r = table.getRowCount();
+            checkBoxes = new ArrayList<SimpleCheckBox>(30);
             for (int i = 0; i < result.size(); i++) {
                 table.setText(r + i +1, 0, result.get(i)[0]);
                 table.setText(r + i +1, 1, result.get(i)[1]);
                 table.setText(r + i +1, 2, result.get(i)[2]);
-                SimpleCheckBox checkBox = new SimpleCheckBox();
+                final SimpleCheckBox checkBox = new SimpleCheckBox();
+                checkBoxes.add(checkBox);
                 checkBox.setStyleName("regular-checkbox");
+                checkBox.addValueChangeHandler(new ValueChangeHandler<Boolean>() {
+                    public void onValueChange(ValueChangeEvent<Boolean> event) {
+                        int ind = checkBoxes.indexOf(checkBox) + 2;
+                        if(event.getValue()) {
+                            /*HorizontalPanel hp = new HorizontalPanel();
+                            hp.add(checkBox);
+                            hp.add(new TextBox());
+                            hp.setStyleName("Reason");
+                            table.setWidget(ind, 3, hp);*/
+                            if(!someBody) {
+                                for (int j = 2; j < table.getRowCount(); j++) {
+                                    table.setText(j, 4, "");
+                                }
+                            }
+                            someBody = true;
+                            table.setText(0, 4, "Причина");
+                            table.setWidget(ind, 3, checkBox);
+                            TextBox textBox = new TextBox();
+                            textBox.setStyleName("ReasonSetBox");
+                            table.setWidget(ind, 4, textBox);
+                            //MyDialogBox db = new MyDialogBox(new Label("что-то"));
+                            //db.show();
+                            //db.center();
+
+                        } else {
+                            table.setWidget(ind, 3, checkBox);
+                            table.setText(ind, 4, "");
+                        }
+                    }
+                });
                 table.setWidget(r + i + 1, 3, checkBox);
             }
 
         }
+
 
     }
 
