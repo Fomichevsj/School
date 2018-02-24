@@ -7,12 +7,18 @@
         <servlet-name>com.school.School SchoolService</servlet-name>
         <servlet-class>com.school.server.SchoolServiceImpl</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>com.school.School SendStatusService</servlet-name>
+        <servlet-class>com.school.server.SendStatusServiceImpl</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>com.school.School SchoolService</servlet-name>
         <url-pattern>/School/SchoolService</url-pattern>
     </servlet-mapping>
-
-
+    <servlet-mapping>
+        <servlet-name>com.school.School SendStatusService</servlet-name>
+        <url-pattern>/School/SendService</url-pattern>
+    </servlet-mapping>
 
 
 </web-app>

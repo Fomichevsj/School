@@ -52,13 +52,22 @@ public class School implements EntryPoint {
         button.setStyleName("sendButton");
         RootPanel.get("School").add(mainPanel);
 
+
         button.addClickHandler(new ClickHandler() {
             public void onClick(ClickEvent event) {
                 label.setText("Отправили информацию");
+                List<Boolean> l = new ArrayList<Boolean>(30);
                 for (int i = 2; i < schoolFlexTable.getRowCount(); i++) {
                     SimpleCheckBox sch = (SimpleCheckBox) schoolFlexTable.getWidget(i, 3);
-                    sch.setValue(true);
+                    if(sch.isChecked()) {
+                        sch.setValue(false);
+                        l.add(true);
+                    } else {
+                        sch.setValue(true);
+                        l.add(false);
+                    }
                 }
+                SendStatusService.App.getInstance().sendInfo(l, new SendAsyncCallback());
             }
         });
     }
@@ -89,5 +98,15 @@ public class School implements EntryPoint {
 
         }
 
+    }
+
+    private static class SendAsyncCallback implements AsyncCallback {
+        public void onFailure(Throwable caught) {
+
+        }
+
+        public void onSuccess(Object result) {
+
+        }
     }
 }
