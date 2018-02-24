@@ -39,6 +39,13 @@ body, a, div, .p {
     width: 5%;
 }
 
+.sendTable {
+    border: 1px solid #ddd;
+    padding: 8px;
+    collor: red;
+    border-collapse: collapse;/*Убирает сверху над таблицей линию*/
+}
+
 .FlexTable-Header td{
     padding-top: 8px;/*Отступ текста от верхней границе*/
     padding-bottom: 8px;/*от нижней границе*/
@@ -48,4 +55,17 @@ body, a, div, .p {
     height: 25px;
     padding-left: 10px;
     color: white;
+}
+
+.sendButton {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
 }

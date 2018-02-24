@@ -35,7 +35,10 @@ public class School implements EntryPoint {
         // Associate the Main panel with the HTML host page.
         schoolFlexTable.setStyleName("School", true);// Добовляет новый стиль для таблицы
 
+        Button button = new Button("Отправить");
 
+        RootPanel.get("sendInfoButton").add(button);
+        button.setStyleName("sendButton");
         RootPanel.get("School").add(mainPanel);
     }
 
