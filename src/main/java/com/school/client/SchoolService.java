@@ -4,10 +4,12 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 
+import java.util.List;
+
 @RemoteServiceRelativePath("SchoolService")
 public interface SchoolService extends RemoteService {
 
-    String[] getInfo();
+    List<String[]> getInfo();
 
     /**
      * Utility/Convenience class.

@@ -6,6 +6,8 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.*;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
+import java.util.List;
+
 /**
  * Entry point classes define <code>onModuleLoad()</code>
  */
@@ -58,7 +60,7 @@ public class School implements EntryPoint {
     }
 
 
-    private static class MyAsyncCallback implements AsyncCallback<String[]> {
+    private static class MyAsyncCallback implements AsyncCallback<List<String[]>> {
         private FlexTable table;
 
 
@@ -71,12 +73,15 @@ public class School implements EntryPoint {
 
         }
 
-        public void onSuccess(String[] result) {
+        public void onSuccess(List<String[]> result) {
             int r = table.getRowCount();
-            table.setText(r +1, 0, result[0]);
-            table.setText(r +1, 1, result[1]);
-            table.setText(r +1, 2, result[2]);
-            table.setText(r +1, 3, result[3]);
+            for (int i = 0; i < result.size(); i++) {
+                table.setText(r + i +1, 0, result.get(i)[0]);
+                table.setText(r + i +1, 1, result.get(i)[1]);
+                table.setText(r + i +1, 2, result.get(i)[2]);
+                table.setText(r + i +1, 3, result.get(i)[3]);
+
+            }
 
         }
 
