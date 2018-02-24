@@ -6,8 +6,8 @@ import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 
 @RemoteServiceRelativePath("SchoolService")
 public interface SchoolService extends RemoteService {
-    // Sample interface method of remote interface
-    String getMessage(String msg);
+
+    String[] getInfo();
 
     /**
      * Utility/Convenience class.

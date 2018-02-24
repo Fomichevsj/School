@@ -1,6 +1,8 @@
 package com.school.client;
 
 import com.google.gwt.core.client.EntryPoint;
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.*;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
@@ -36,7 +38,19 @@ public class School implements EntryPoint {
         schoolFlexTable.setStyleName("School", true);// Добовляет новый стиль для таблицы
 
         Button button = new Button("Отправить");
+        final Label label = new Label("Отправить информацию");
 
+        button.addClickHandler(new ClickHandler() {
+            public void onClick(ClickEvent event) {
+                if (label.getText().equals("Отправить информацию")) {
+                    SchoolService.App.getInstance().getInfo(new MyAsyncCallback(schoolFlexTable));
+                } else {
+                    label.setText("Отправить информацию");
+                }
+            }
+        });
+
+        RootPanel.get("statusLabel").add(label);
         RootPanel.get("sendInfoButton").add(button);
         button.setStyleName("sendButton");
         RootPanel.get("School").add(mainPanel);
@@ -54,19 +68,27 @@ public class School implements EntryPoint {
         schoolFlexTable.setText(2, 3, "N");
     }
 
-    private static class MyAsyncCallback implements AsyncCallback<String> {
-        private Label label;
+    private static class MyAsyncCallback implements AsyncCallback<String[]> {
+        private FlexTable table;
 
-        public MyAsyncCallback(Label label) {
-            this.label = label;
+
+        public MyAsyncCallback(FlexTable schoolFlexTable ) {
+            this.table = schoolFlexTable;
         }
 
-        public void onSuccess(String result) {
-            label.getElement().setInnerHTML(result);
-        }
 
         public void onFailure(Throwable throwable) {
-            label.setText("Failed to receive answer from server!");
+
         }
+
+        public void onSuccess(String[] result) {
+            int r = table.getRowCount();
+            table.setText(r +1, 0, result[0]);
+            table.setText(r +1, 1, result[1]);
+            table.setText(r +1, 2, result[2]);
+            table.setText(r +1, 3, result[3]);
+
+        }
+
     }
 }
