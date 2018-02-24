@@ -17,6 +17,18 @@ public class Student {
         this.BirthDate = birthDate;
     }
 
+    public Student(String lastName,
+                   String firstName,
+                   String middleName,
+                   String birthDate,
+                   String Id) {
+        this.LastName = lastName;
+        this.FirstName = firstName;
+        this.MiddleName = middleName;
+        this.BirthDate = birthDate;
+        this.Id = Id;
+    }
+
     public void print() {
         System.out.println(LastName + "     " + FirstName + "     " + MiddleName + "     " + BirthDate);
     }

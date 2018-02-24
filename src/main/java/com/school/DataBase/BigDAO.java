@@ -17,6 +17,7 @@ public class BigDAO {
    public List<Student> getStudents(String className) throws SQLException {
        String query = String.format("-- Получить информацию об учениках которые учатся в определенном классе\n" +
                "select\n" +
+               "s.\"Id\",\n" +
                "s.\"LastName\",\n" +
                "s.\"FirstName\",\n" +
                "s.\"MiddleName\",\n" +
@@ -27,7 +28,7 @@ public class BigDAO {
                "\t\"School\".\"Class\" c\n" +
                "where\n" +
                "\ts.\"ClassId\" = c.\"Id\"\n" +
-               "\tand c.\"Name\" = '%s'",
+               "\tand c.\"Name\" = '%s'\n",
                className);
        System.out.println(query);
        Statement st = con.createStatement();
