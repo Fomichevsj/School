@@ -3,9 +3,11 @@ package com.school.client;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.*;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -44,12 +46,22 @@ public class School implements EntryPoint {
         final Label label = new Label("Отправить информацию");
 
 
+
         RootPanel.get("statusLabel").add(label);
         RootPanel.get("sendInfoButton").add(button);
         button.setStyleName("sendButton");
         RootPanel.get("School").add(mainPanel);
-    }
 
+        button.addClickHandler(new ClickHandler() {
+            public void onClick(ClickEvent event) {
+                label.setText("Отправили информацию");
+                for (int i = 2; i < schoolFlexTable.getRowCount(); i++) {
+                    SimpleCheckBox sch = (SimpleCheckBox) schoolFlexTable.getWidget(i, 3);
+                    sch.setValue(true);
+                }
+            }
+        });
+    }
 
     private static class MyAsyncCallback implements AsyncCallback<List<String[]>> {
         private FlexTable table;
