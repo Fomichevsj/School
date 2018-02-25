@@ -41,7 +41,7 @@ public class School implements EntryPoint {
         schoolFlexTable.setStyleName("School", true);// Добовляет новый стиль для таблицы
 
         Button button = new Button("Отправить");
-        Button addButton = new Button("Поиск");
+        Button searchButton = new Button("Поиск");
         final Label label = new Label("Отправить информацию");
         Label dateLabel = new Label("Дата");
 
@@ -50,9 +50,9 @@ public class School implements EntryPoint {
 
         RootPanel.get("statusLabel").add(label);
         RootPanel.get("sendInfoButton").add(button);
-        RootPanel.get("addButton").add(addButton);
+        RootPanel.get("searchButton").add(searchButton);
         RootPanel.get("Datelabel").add(dateLabel);
-        addButton.setStyleName("sendButton");
+        searchButton.setStyleName("searchButton");
         button.setStyleName("sendButton");
         RootPanel.get("School").add(mainPanel);
 

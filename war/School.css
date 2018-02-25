@@ -113,6 +113,20 @@ tr:nth-child(even){background-color: #f2f2f2;}
 
 }
 
+.searchButton {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    border-radius: 10px;/*Закругление*/
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
 .ReasonSetBox {
     border-collapse: collapse;
     border: none;

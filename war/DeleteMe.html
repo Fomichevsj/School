@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Кодировка HTML-страницы</title>
+    <style>
+        #students {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+
+
+        #topPanel {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            border: none;
+        }
+
+        #topPanel td, #topPanel th {
+            border: 1px solid #ddd;
+            padding: 8px;
+            border: none;
+        }
+
+        #topPanel th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: right;
+            color: black;
+            border:none
+        }
+
+        #topPanel table {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            width: 100%;
+            border: none;
+        }
+
+        #topPanel button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            border-radius: 10px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        #students td, #students th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #students tr:nth-child(even){background-color: #f2f2f2;}
+
+        #students tr:hover {background-color: #ddd;}
+
+        #students th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+<h1 align="center">11 - Б класс</h1>
+<h1 align="center">Учитель</h1>
+
+<table id ="topPanel">
+    <tr>
+        <th align="left">
+            <div align="left">
+                <button>Поиск</button>
+            </div>
+        </th>
+        <th>
+            <label id = "DateLabel">Текущая дата</label>
+        </th>
+    </tr>
+</table>
+
+<table id="students">
+    <tr>
+        <th>Фамилия</th>
+        <th>Имя</th>
+        <th>Отчество</th>
+        <th>Был или не был</th>
+    </tr>
+    <tr>
+        <td>Комаров	</td>
+        <td>Павел</td>
+        <td>Леонидович</td>
+        <td><input type="checkbox">  Был</td>
+    </tr>
+    <tr>
+        <td>Григорьев	</td>
+        <td>Леонтий</td>
+        <td>Львович</td>
+        <td><input type="checkbox">  Был</td>
+    </tr>
+</table>
+
+
+</body>
+</html>
+
