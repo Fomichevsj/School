@@ -10,7 +10,6 @@
 
 
 
-
     <!-- Specify the app servlets.                   -->
     <servlet path='/SchoolService' class='com.school.server.SchoolServiceImpl'/>
 

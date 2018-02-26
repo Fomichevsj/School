@@ -1,0 +1,9 @@
+1) Нужно было создать ключ в регистарх
+win + r -> regedit -> enter
+далее HKEY_LOCAL_MACHINE -> SoftWare -> JavaSoft -> Правой кнопкой мыши: Создать -> Раздел с именем Prefs
+2) Нужно в IDEA: Run -> Edit Configuration -> Поставить true на режим Super Dev Mode
+3) Видимо, не может найти дериктори в School.html School/School.nocache.js
+4)нужно проверить этот пункт. Возмножно там будет стоять неверные настройки
+File > Settings > Build, Execution, Deployment > Compiler > Java Compiler
+Change Target bytecode version to 1.8 of the module that you are working for.
+ https://stackoverflow.com/questions/29888592/errorjava-javactask-source-release-8-requires-target-release-1-8

@@ -45,6 +45,42 @@ public class Students {
                 con.close();
     }
 
+    public void insertRandomRow(String className) throws SQLException {
+        Connection con = BaseHelper.getConnection();
+        Statement st = con.createStatement();
+
+        Id = UUID.randomUUID();
+        LastName = GetRandomLastName.lastName();
+        FirstName = GetRandomName.firstName();
+        MiddleName = GetRandomMiddleName.middleName();
+        BirthDate = "";
+
+
+        ResultSet resultSet = null;
+        try {
+            String findClass = "Select * from \"School\".\"Class\" where \"Class\".\"Name\" = '" + className +"'";
+            System.out.println(findClass);
+            resultSet = st.executeQuery(findClass);
+            resultSet.next();
+            Class = resultSet.getString("Id");
+        } catch (SQLException s) {
+            s.printStackTrace();
+        }
+
+        String sql = String.format("INSERT  into \"School\".\"Student\"(" +
+                        "\"Id\", \"LastName\", \"FirstName\", \"MiddleName\", \"ClassId\")\n" +
+                        "VALUES (uuid_in('%s'), '%s', '%s', '%s', uuid_in('%s'));",
+                Id,
+                LastName,
+                FirstName,
+                MiddleName,
+                Class);
+        System.out.println(sql);
+        st.executeUpdate(sql);
+        st.close();
+        con.close();
+    }
+
     public static List<Student> getStudents(String className) throws SQLException {
         Connection con = BaseHelper.getConnection();
         String query = String.format("-- Получить информацию об учениках которые учатся в определенном классе\n" +
