@@ -63,6 +63,7 @@ public class School implements EntryPoint {
         RootPanel.get("School").add(mainPanel);
 
 
+
         button.addClickHandler(new ClickHandler() {
             public void onClick(ClickEvent event) {
                 label.setText("Отправили информацию");

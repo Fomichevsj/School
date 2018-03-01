@@ -18,7 +18,7 @@ public class SchoolServiceImpl extends RemoteServiceServlet implements SchoolSer
         List<Student> l = new ArrayList<Student>(30);
         BigDAO bigDAO = new BigDAO();
         try {
-            l = bigDAO.getStudents("11B");
+            l = bigDAO.getStudents("11-Б");
         } catch (SQLException sqle) {
             System.out.println("что-то пошло не так");
             sqle.printStackTrace();

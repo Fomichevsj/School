@@ -9,7 +9,7 @@ import java.util.List;
 public class SendStatusServiceImpl extends RemoteServiceServlet implements SendStatusService {
     public void sendInfo(List<Boolean> booleanList) {
         System.out.println("Значение которая пришли с сервака");
-        InsertVisits.push(booleanList, "11B");
+        InsertVisits.push(booleanList, "11-Б");
         for (Boolean b: booleanList
              ) {
             System.out.println(b);
